@@ -1,11 +1,10 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import HomeScreen from "../screens/HomeScreen";
+import { Ionicons } from "@expo/vector-icons";
+import { StyleSheet, View } from "react-native";
+import StackNavigator from "./StackNavigator";
 import CartScreen from "../screens/CartScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import SearchScreen from "../screens/SearchScreen";
-import { View, Text } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
-import StackNavigator from "./StackNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -15,15 +14,29 @@ export default function BottomTabs() {
       screenOptions={({ route }) => ({
         headerShown: false,
         tabBarShowLabel: false,
-        tabBarStyle: { backgroundColor: "#fff", height: 70, borderTopWidth: 0, shadowColor: "#000", shadowOpacity: 0.05, shadowRadius: 10 },
+        tabBarStyle: styles.tabBar,
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
-          if (route.name === "HomeTab") iconName = focused ? "home" : "home-outline";
-          else if (route.name === "Search") iconName = focused ? "search" : "search-outline";
-          else if (route.name === "Cart") iconName = focused ? "cart" : "cart-outline";
-          else if (route.name === "Profile") iconName = focused ? "person" : "person-outline";
+          
+          if (route.name === "HomeTab") {
+            iconName = focused ? "home" : "home-outline";
+          } else if (route.name === "Search") {
+            iconName = focused ? "search" : "search-outline";
+          } else if (route.name === "Cart") {
+            iconName = focused ? "cart" : "cart-outline";
+          } else if (route.name === "Profile") {
+            iconName = focused ? "person" : "person-outline";
+          }
 
-          return <Ionicons name={iconName} size={24} color={focused ? "#00cc66" : "#777"} />;
+          return (
+            <View style={[styles.iconContainer, focused && styles.iconContainerActive]}>
+              <Ionicons
+                name={iconName}
+                size={26}
+                color={focused ? "#00D9A5" : "#4A5568"}
+              />
+            </View>
+          );
         },
       })}
     >
@@ -34,3 +47,32 @@ export default function BottomTabs() {
     </Tab.Navigator>
   );
 }
+
+const styles = StyleSheet.create({
+  tabBar: {
+    backgroundColor: '#1A1F36',
+    borderTopWidth: 0,
+    height: 80,
+    paddingTop: 12,
+    paddingBottom: 20,
+    paddingHorizontal: 20,
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
+    position: 'absolute',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: -4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 10,
+  },
+  iconContainer: {
+    width: 52,
+    height: 52,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 16,
+  },
+  iconContainerActive: {
+    backgroundColor: 'rgba(0, 217, 165, 0.15)',
+  },
+});
