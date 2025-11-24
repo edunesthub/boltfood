@@ -14,10 +14,10 @@ export default function SearchScreen() {
 
       {/* Search Bar */}
       <View style={styles.searchContainer}>
-        <Ionicons name="search" size={22} color="#4A5568" />
+        <Ionicons name="search" size={22} color="#6B7280" />
         <TextInput
           placeholder="Search for restaurants or dishes"
-          placeholderTextColor="#4A5568"
+          placeholderTextColor="#6B7280"
           style={styles.searchInput}
           autoFocus
         />
@@ -36,10 +36,10 @@ export default function SearchScreen() {
           {recentSearches.map((search, index) => (
             <TouchableOpacity key={index} style={styles.searchItem}>
               <View style={styles.searchIcon}>
-                <Ionicons name="time-outline" size={20} color="#4A5568" />
+                <Ionicons name="time-outline" size={20} color="#6B7280" />
               </View>
               <Text style={styles.searchText}>{search}</Text>
-              <Ionicons name="arrow-forward" size={20} color="#4A5568" />
+              <Ionicons name="arrow-forward" size={20} color="#6B7280" />
             </TouchableOpacity>
           ))}
         </View>
@@ -51,14 +51,14 @@ export default function SearchScreen() {
           <View style={styles.tagsContainer}>
             {popularSearches.map((tag, index) => (
               <TouchableOpacity key={index} style={styles.tag}>
-                <Ionicons name="trending-up" size={16} color="#00D9A5" />
+                <Ionicons name="trending-up" size={16} color="#10B981" />
                 <Text style={styles.tagText}>{tag}</Text>
               </TouchableOpacity>
             ))}
           </View>
         </View>
 
-        <View style={{ height: 100 }} />
+        <View style={{ height: 130 }} />
       </ScrollView>
     </View>
   );
@@ -67,7 +67,7 @@ export default function SearchScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0A0E27',
+    backgroundColor: '#111827',
   },
   header: {
     paddingTop: 60,
@@ -77,23 +77,25 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 32,
     fontWeight: '800',
-    color: '#FFFFFF',
+    color: '#F9FAFB',
   },
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#1A1F36',
-    borderRadius: 16,
+    backgroundColor: 'rgba(31, 41, 55, 0.6)',
+    borderRadius: 20,
     paddingHorizontal: 16,
     paddingVertical: 14,
     marginHorizontal: 20,
     marginBottom: 24,
     gap: 12,
+    borderWidth: 1,
+    borderColor: 'rgba(75, 85, 99, 0.3)',
   },
   searchInput: {
     flex: 1,
     fontSize: 16,
-    color: '#FFFFFF',
+    color: '#F9FAFB',
   },
   section: {
     paddingHorizontal: 20,
@@ -108,27 +110,29 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 20,
     fontWeight: '800',
-    color: '#FFFFFF',
+    color: '#F9FAFB',
     marginBottom: 16,
   },
   clearText: {
     fontSize: 14,
-    color: '#00D9A5',
+    color: '#10B981',
     fontWeight: '700',
   },
   searchItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#1A1F36',
+    backgroundColor: 'rgba(31, 41, 55, 0.6)',
     padding: 16,
-    borderRadius: 12,
+    borderRadius: 16,
     marginBottom: 12,
+    borderWidth: 1,
+    borderColor: 'rgba(75, 85, 99, 0.3)',
   },
   searchIcon: {
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: '#0A0E27',
+    backgroundColor: 'rgba(17, 24, 39, 0.8)',
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 12,
@@ -137,7 +141,7 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 16,
     fontWeight: '600',
-    color: '#FFFFFF',
+    color: '#F9FAFB',
   },
   tagsContainer: {
     flexDirection: 'row',
@@ -147,15 +151,17 @@ const styles = StyleSheet.create({
   tag: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#1A1F36',
+    backgroundColor: 'rgba(31, 41, 55, 0.6)',
     paddingHorizontal: 16,
     paddingVertical: 12,
     borderRadius: 24,
     gap: 8,
+    borderWidth: 1,
+    borderColor: 'rgba(75, 85, 99, 0.3)',
   },
   tagText: {
     fontSize: 14,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#F9FAFB',
   },
 });

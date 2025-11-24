@@ -15,7 +15,7 @@ export default function MealCard({ meal, onPress }) {
         </View>
         
         <TouchableOpacity style={styles.addButton}>
-          <Ionicons name="add" size={24} color="#0A0E27" />
+          <Ionicons name="add" size={24} color="#111827" />
         </TouchableOpacity>
       </View>
     </TouchableOpacity>
@@ -24,10 +24,12 @@ export default function MealCard({ meal, onPress }) {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#1A1F36',
-    borderRadius: 16,
+    backgroundColor: 'rgba(31, 41, 55, 0.6)',
+    borderRadius: 20,
     marginBottom: 16,
     overflow: 'hidden',
+    borderWidth: 1,
+    borderColor: 'rgba(75, 85, 99, 0.3)',
   },
   content: {
     flexDirection: 'row',
@@ -41,20 +43,25 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 18,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#F9FAFB',
     marginBottom: 6,
   },
   price: {
     fontSize: 20,
     fontWeight: '800',
-    color: '#00D9A5',
+    color: '#10B981',
   },
   addButton: {
     width: 44,
     height: 44,
     borderRadius: 22,
-    backgroundColor: '#00D9A5',
+    backgroundColor: '#10B981',
     justifyContent: 'center',
     alignItems: 'center',
+    shadowColor: '#10B981',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 8,
   },
 });

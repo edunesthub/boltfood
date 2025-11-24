@@ -20,11 +20,11 @@ export default function RestaurantScreen({ route, navigation }) {
           style={styles.backButton}
           onPress={() => navigation.goBack()}
         >
-          <Ionicons name="arrow-back" size={24} color="#FFFFFF" />
+          <Ionicons name="arrow-back" size={24} color="#F9FAFB" />
         </TouchableOpacity>
         
         <TouchableOpacity style={styles.favoriteButton}>
-          <Ionicons name="heart-outline" size={24} color="#FFFFFF" />
+          <Ionicons name="heart-outline" size={24} color="#F9FAFB" />
         </TouchableOpacity>
       </View>
 
@@ -34,11 +34,11 @@ export default function RestaurantScreen({ route, navigation }) {
         
         <View style={styles.metaContainer}>
           <View style={styles.ratingBadge}>
-            <Ionicons name="star" size={16} color="#FFB800" />
+            <Ionicons name="star" size={16} color="#FBBF24" />
             <Text style={styles.rating}>{restaurant.rating}</Text>
           </View>
           <Text style={styles.divider}>•</Text>
-          <Ionicons name="time-outline" size={16} color="#4A5568" />
+          <Ionicons name="time-outline" size={16} color="#6B7280" />
           <Text style={styles.metaText}>{restaurant.deliveryTime}</Text>
           <Text style={styles.divider}>•</Text>
           <Text style={styles.metaText}>{restaurant.price}</Text>
@@ -74,7 +74,7 @@ export default function RestaurantScreen({ route, navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0A0E27',
+    backgroundColor: '#111827',
   },
   heroContainer: {
     position: 'relative',
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
   heroImage: {
     width: '100%',
     height: '100%',
-    backgroundColor: '#2D3748',
+    backgroundColor: '#374151',
   },
   backButton: {
     position: 'absolute',
@@ -92,7 +92,9 @@ const styles = StyleSheet.create({
     width: 44,
     height: 44,
     borderRadius: 22,
-    backgroundColor: 'rgba(26, 31, 54, 0.9)',
+    backgroundColor: 'rgba(31, 41, 55, 0.9)',
+    borderWidth: 1,
+    borderColor: 'rgba(16, 185, 129, 0.2)',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -103,7 +105,9 @@ const styles = StyleSheet.create({
     width: 44,
     height: 44,
     borderRadius: 22,
-    backgroundColor: 'rgba(26, 31, 54, 0.9)',
+    backgroundColor: 'rgba(31, 41, 55, 0.9)',
+    borderWidth: 1,
+    borderColor: 'rgba(16, 185, 129, 0.2)',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -113,7 +117,7 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 28,
     fontWeight: '800',
-    color: '#FFFFFF',
+    color: '#F9FAFB',
     marginBottom: 12,
   },
   metaContainer: {
@@ -125,33 +129,35 @@ const styles = StyleSheet.create({
   ratingBadge: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#1A1F36',
+    backgroundColor: 'rgba(31, 41, 55, 0.6)',
     paddingHorizontal: 8,
     paddingVertical: 4,
     borderRadius: 8,
     gap: 4,
+    borderWidth: 1,
+    borderColor: 'rgba(251, 191, 36, 0.2)',
   },
   rating: {
     fontSize: 14,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#F9FAFB',
   },
   metaText: {
     fontSize: 14,
-    color: '#4A5568',
+    color: '#6B7280',
     fontWeight: '600',
   },
   divider: {
-    color: '#4A5568',
+    color: '#6B7280',
     fontSize: 14,
   },
   menuTitle: {
     fontSize: 22,
     fontWeight: '800',
-    color: '#FFFFFF',
+    color: '#F9FAFB',
   },
   mealsList: {
     paddingHorizontal: 20,
-    paddingBottom: 100,
+    paddingBottom: 120,
   },
 });

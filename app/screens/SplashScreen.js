@@ -42,7 +42,7 @@ export default function SplashScreen() {
             { transform: [{ scale: scaleAnim }] },
           ]}
         >
-          <Ionicons name="fast-food" size={64} color="#00D9A5" />
+          <Ionicons name="fast-food" size={64} color="#10B981" />
         </Animated.View>
         <Text style={styles.title}>BoltFood</Text>
         <Text style={styles.subtitle}>Premium food delivery</Text>
@@ -62,7 +62,7 @@ export default function SplashScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0A0E27',
+    backgroundColor: '#111827',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -75,7 +75,9 @@ const styles = StyleSheet.create({
     width: 120,
     height: 120,
     borderRadius: 30,
-    backgroundColor: '#1A1F36',
+    backgroundColor: 'rgba(31, 41, 55, 0.6)',
+    borderWidth: 1,
+    borderColor: 'rgba(16, 185, 129, 0.2)',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 32,
@@ -83,13 +85,13 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 42,
     fontWeight: '800',
-    color: '#FFFFFF',
+    color: '#F9FAFB',
     marginBottom: 8,
     letterSpacing: 1,
   },
   subtitle: {
     fontSize: 16,
-    color: '#4A5568',
+    color: '#6B7280',
     letterSpacing: 0.5,
   },
   footer: {
@@ -99,13 +101,13 @@ const styles = StyleSheet.create({
   },
   loadingBarContainer: {
     height: 4,
-    backgroundColor: '#1A1F36',
+    backgroundColor: 'rgba(31, 41, 55, 0.6)',
     borderRadius: 2,
     overflow: 'hidden',
   },
   loadingBar: {
     height: '100%',
-    backgroundColor: '#00D9A5',
+    backgroundColor: '#10B981',
     borderRadius: 2,
   },
 });

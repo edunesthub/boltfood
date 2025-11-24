@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, FlatList, TextInput, ScrollView, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, TextInput, ScrollView, StyleSheet, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { restaurants } from "../data/restaurants";
 import RestaurantCard from "../components/RestaurantCard";
@@ -23,9 +23,9 @@ export default function HomeScreen({ navigation }) {
         <View>
           <Text style={styles.greeting}>Good afternoon</Text>
           <View style={styles.locationRow}>
-            <Ionicons name="location" size={16} color="#00D9A5" />
+            <Ionicons name="location" size={16} color="#10B981" />
             <Text style={styles.location}>East Legon, Accra</Text>
-            <Ionicons name="chevron-down" size={16} color="#4A5568" />
+            <Ionicons name="chevron-down" size={16} color="#6B7280" />
           </View>
         </View>
         <TouchableOpacity style={styles.notificationBtn}>
@@ -33,12 +33,12 @@ export default function HomeScreen({ navigation }) {
         </TouchableOpacity>
       </View>
 
-      {/* Premium Search Bar */}
+      {/* Premium Search Bar with Glass Effect */}
       <View style={styles.searchContainer}>
-        <Ionicons name="search" size={20} color="#4A5568" />
+        <Ionicons name="search" size={20} color="#6B7280" />
         <TextInput
           placeholder="Search restaurants or dishes"
-          placeholderTextColor="#4A5568"
+          placeholderTextColor="#6B7280"
           value={searchQuery}
           onChangeText={setSearchQuery}
           style={styles.searchInput}
@@ -65,7 +65,7 @@ export default function HomeScreen({ navigation }) {
               <Ionicons
                 name={cat.icon}
                 size={18}
-                color={selectedCategory === cat.id ? '#0A0E27' : '#FFFFFF'}
+                color={selectedCategory === cat.id ? '#111827' : '#D1D5DB'}
               />
               <Text
                 style={[
@@ -96,7 +96,7 @@ export default function HomeScreen({ navigation }) {
           />
         ))}
 
-        <View style={{ height: 100 }} />
+        <View style={{ height: 130 }} />
       </ScrollView>
     </View>
   );
@@ -105,7 +105,7 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0A0E27',
+    backgroundColor: '#111827',
   },
   header: {
     paddingTop: 60,
@@ -117,8 +117,9 @@ const styles = StyleSheet.create({
   },
   greeting: {
     fontSize: 16,
-    color: '#4A5568',
+    color: '#6B7280',
     marginBottom: 4,
+    fontWeight: '500',
   },
   locationRow: {
     flexDirection: 'row',
@@ -128,31 +129,35 @@ const styles = StyleSheet.create({
   location: {
     fontSize: 18,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#F9FAFB',
   },
   notificationBtn: {
     width: 48,
     height: 48,
     borderRadius: 24,
-    backgroundColor: '#1A1F36',
+    backgroundColor: 'rgba(31, 41, 55, 0.8)',
+    borderWidth: 1,
+    borderColor: 'rgba(16, 185, 129, 0.2)',
     justifyContent: 'center',
     alignItems: 'center',
   },
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#1A1F36',
-    borderRadius: 16,
+    backgroundColor: 'rgba(31, 41, 55, 0.6)',
+    borderRadius: 20,
     paddingHorizontal: 16,
     paddingVertical: 14,
     marginHorizontal: 20,
     marginBottom: 24,
     gap: 12,
+    borderWidth: 1,
+    borderColor: 'rgba(75, 85, 99, 0.3)',
   },
   searchInput: {
     flex: 1,
     fontSize: 16,
-    color: '#FFFFFF',
+    color: '#F9FAFB',
   },
   categoriesScroll: {
     marginBottom: 32,
@@ -163,23 +168,26 @@ const styles = StyleSheet.create({
   categoryChip: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#1A1F36',
+    backgroundColor: 'rgba(31, 41, 55, 0.6)',
     paddingHorizontal: 18,
     paddingVertical: 12,
     borderRadius: 24,
     marginRight: 12,
     gap: 8,
+    borderWidth: 1,
+    borderColor: 'rgba(75, 85, 99, 0.3)',
   },
   categoryChipActive: {
-    backgroundColor: '#00D9A5',
+    backgroundColor: '#10B981',
+    borderColor: '#059669',
   },
   categoryText: {
     fontSize: 15,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#D1D5DB',
   },
   categoryTextActive: {
-    color: '#0A0E27',
+    color: '#111827',
   },
   sectionHeader: {
     flexDirection: 'row',
@@ -191,11 +199,11 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 24,
     fontWeight: '800',
-    color: '#FFFFFF',
+    color: '#F9FAFB',
   },
   seeAll: {
     fontSize: 15,
-    color: '#00D9A5',
+    color: '#10B981',
     fontWeight: '700',
   },
 });

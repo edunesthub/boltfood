@@ -24,14 +24,14 @@ export default function RestaurantCard({ restaurant, onPress }) {
             {restaurant.name}
           </Text>
           <View style={styles.ratingBadge}>
-            <Ionicons name="star" size={14} color="#FFB800" />
+            <Ionicons name="star" size={14} color="#FBBF24" />
             <Text style={styles.rating}>{restaurant.rating}</Text>
           </View>
         </View>
         
         <View style={styles.metaContainer}>
           <View style={styles.metaItem}>
-            <Ionicons name="time-outline" size={14} color="#4A5568" />
+            <Ionicons name="time-outline" size={14} color="#6B7280" />
             <Text style={styles.metaText}>{restaurant.deliveryTime}</Text>
           </View>
           <Text style={styles.divider}>•</Text>
@@ -54,26 +54,28 @@ const styles = StyleSheet.create({
   card: {
     marginHorizontal: 20,
     marginBottom: 20,
-    borderRadius: 20,
-    backgroundColor: '#1A1F36',
+    borderRadius: 24,
+    backgroundColor: 'rgba(31, 41, 55, 0.6)',
     overflow: 'hidden',
+    borderWidth: 1,
+    borderColor: 'rgba(75, 85, 99, 0.3)',
   },
   image: {
     width: '100%',
     height: 200,
-    backgroundColor: '#2D3748',
+    backgroundColor: '#374151',
   },
   promoBadge: {
     position: 'absolute',
     top: 16,
     right: 16,
-    backgroundColor: '#FF6B6B',
+    backgroundColor: '#10B981',
     paddingHorizontal: 12,
     paddingVertical: 6,
-    borderRadius: 8,
+    borderRadius: 12,
   },
   promoText: {
-    color: '#FFFFFF',
+    color: '#111827',
     fontSize: 12,
     fontWeight: '800',
     letterSpacing: 0.5,
@@ -90,23 +92,25 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 20,
     fontWeight: '800',
-    color: '#FFFFFF',
+    color: '#F9FAFB',
     flex: 1,
     marginRight: 12,
   },
   ratingBadge: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#0A0E27',
+    backgroundColor: 'rgba(17, 24, 39, 0.8)',
     paddingHorizontal: 8,
     paddingVertical: 4,
     borderRadius: 8,
     gap: 4,
+    borderWidth: 1,
+    borderColor: 'rgba(251, 191, 36, 0.2)',
   },
   rating: {
     fontSize: 14,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#F9FAFB',
   },
   metaContainer: {
     flexDirection: 'row',
@@ -120,11 +124,11 @@ const styles = StyleSheet.create({
   },
   metaText: {
     fontSize: 14,
-    color: '#4A5568',
+    color: '#6B7280',
     fontWeight: '600',
   },
   divider: {
-    color: '#4A5568',
+    color: '#6B7280',
     fontSize: 14,
   },
 });

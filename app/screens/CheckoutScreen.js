@@ -10,7 +10,7 @@ export default function CheckoutScreen({ navigation }) {
           style={styles.backButton}
           onPress={() => navigation.goBack()}
         >
-          <Ionicons name="arrow-back" size={24} color="#FFFFFF" />
+          <Ionicons name="arrow-back" size={24} color="#F9FAFB" />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Checkout</Text>
         <View style={{ width: 44 }} />
@@ -20,7 +20,7 @@ export default function CheckoutScreen({ navigation }) {
         {/* Success Icon */}
         <View style={styles.iconContainer}>
           <View style={styles.successCircle}>
-            <Ionicons name="checkmark" size={48} color="#00D9A5" />
+            <Ionicons name="checkmark" size={48} color="#10B981" />
           </View>
         </View>
 
@@ -32,15 +32,15 @@ export default function CheckoutScreen({ navigation }) {
         {/* Payment Methods Preview */}
         <View style={styles.methodsContainer}>
           <View style={styles.methodItem}>
-            <Ionicons name="card-outline" size={24} color="#4A5568" />
+            <Ionicons name="card-outline" size={24} color="#6B7280" />
             <Text style={styles.methodText}>Credit/Debit Card</Text>
           </View>
           <View style={styles.methodItem}>
-            <Ionicons name="phone-portrait-outline" size={24} color="#4A5568" />
+            <Ionicons name="phone-portrait-outline" size={24} color="#6B7280" />
             <Text style={styles.methodText}>Mobile Money</Text>
           </View>
           <View style={styles.methodItem}>
-            <Ionicons name="wallet-outline" size={24} color="#4A5568" />
+            <Ionicons name="wallet-outline" size={24} color="#6B7280" />
             <Text style={styles.methodText}>Digital Wallet</Text>
           </View>
         </View>
@@ -59,7 +59,7 @@ export default function CheckoutScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0A0E27',
+    backgroundColor: '#111827',
   },
   header: {
     paddingTop: 60,
@@ -73,14 +73,16 @@ const styles = StyleSheet.create({
     width: 44,
     height: 44,
     borderRadius: 22,
-    backgroundColor: '#1A1F36',
+    backgroundColor: 'rgba(31, 41, 55, 0.6)',
+    borderWidth: 1,
+    borderColor: 'rgba(16, 185, 129, 0.2)',
     justifyContent: 'center',
     alignItems: 'center',
   },
   headerTitle: {
     fontSize: 20,
     fontWeight: '800',
-    color: '#FFFFFF',
+    color: '#F9FAFB',
   },
   content: {
     flex: 1,
@@ -95,22 +97,22 @@ const styles = StyleSheet.create({
     width: 120,
     height: 120,
     borderRadius: 60,
-    backgroundColor: '#1A1F36',
+    backgroundColor: 'rgba(31, 41, 55, 0.6)',
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 4,
-    borderColor: '#00D9A5',
+    borderColor: '#10B981',
   },
   title: {
     fontSize: 28,
     fontWeight: '800',
-    color: '#FFFFFF',
+    color: '#F9FAFB',
     marginBottom: 12,
     textAlign: 'center',
   },
   subtitle: {
     fontSize: 16,
-    color: '#4A5568',
+    color: '#6B7280',
     textAlign: 'center',
     marginBottom: 40,
     lineHeight: 24,
@@ -122,28 +124,35 @@ const styles = StyleSheet.create({
   methodItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#1A1F36',
+    backgroundColor: 'rgba(31, 41, 55, 0.6)',
     padding: 20,
     borderRadius: 16,
     marginBottom: 12,
     gap: 16,
+    borderWidth: 1,
+    borderColor: 'rgba(75, 85, 99, 0.3)',
   },
   methodText: {
     fontSize: 16,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#F9FAFB',
   },
   button: {
-    backgroundColor: '#00D9A5',
+    backgroundColor: '#10B981',
     paddingHorizontal: 40,
     paddingVertical: 18,
     borderRadius: 16,
     width: '100%',
+    shadowColor: '#10B981',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.3,
+    shadowRadius: 12,
+    elevation: 8,
   },
   buttonText: {
     fontSize: 18,
     fontWeight: '800',
-    color: '#0A0E27',
+    color: '#111827',
     textAlign: 'center',
   },
 });

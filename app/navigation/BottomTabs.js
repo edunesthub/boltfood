@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import StackNavigator from "./StackNavigator";
 import CartScreen from "../screens/CartScreen";
 import ProfileScreen from "../screens/ProfileScreen";
@@ -13,11 +13,11 @@ export default function BottomTabs() {
     <Tab.Navigator
       screenOptions={({ route }) => ({
         headerShown: false,
-        tabBarShowLabel: false,
+        tabBarShowLabel: true,
         tabBarStyle: styles.tabBar,
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
-          
+
           if (route.name === "HomeTab") {
             iconName = focused ? "home" : "home-outline";
           } else if (route.name === "Search") {
@@ -36,6 +36,19 @@ export default function BottomTabs() {
                 color={focused ? "#00D9A5" : "#4A5568"}
               />
             </View>
+          );
+        },
+        tabBarLabel: ({ focused }) => {
+          let title;
+          if (route.name === "HomeTab") title = "Home";
+          else if (route.name === "Search") title = "Search";
+          else if (route.name === "Cart") title = "Cart";
+          else if (route.name === "Profile") title = "Profile";
+
+          return (
+            <Text style={[styles.tabBarLabel, focused && styles.tabBarLabelActive]}>
+              {title}
+            </Text>
           );
         },
       })}
@@ -73,6 +86,15 @@ const styles = StyleSheet.create({
     borderRadius: 16,
   },
   iconContainerActive: {
-    backgroundColor: 'rgba(0, 217, 165, 0.15)',
+    backgroundColor: 'transparent',
+  },
+  tabBarLabel: {
+    fontSize: 12,
+    fontWeight: '500',
+    color: '#4A5568',
+    marginTop: 4,
+  },
+  tabBarLabelActive: {
+    color: '#00D9A5',
   },
 });

@@ -21,7 +21,7 @@ export default function CartScreen({ route, navigation }) {
             {/* Cart Item */}
             <View style={styles.cartItem}>
               <View style={styles.itemIcon}>
-                <Ionicons name="fast-food" size={32} color="#00D9A5" />
+                <Ionicons name="fast-food" size={32} color="#10B981" />
               </View>
               <View style={styles.itemInfo}>
                 <Text style={styles.itemName}>{name}</Text>
@@ -50,7 +50,7 @@ export default function CartScreen({ route, navigation }) {
         ) : (
           <View style={styles.emptyCart}>
             <View style={styles.emptyIcon}>
-              <Ionicons name="cart-outline" size={64} color="#4A5568" />
+              <Ionicons name="cart-outline" size={64} color="#6B7280" />
             </View>
             <Text style={styles.emptyText}>Your cart is empty</Text>
             <Text style={styles.emptySubtext}>
@@ -79,7 +79,7 @@ export default function CartScreen({ route, navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0A0E27',
+    backgroundColor: '#111827',
   },
   header: {
     paddingTop: 60,
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 32,
     fontWeight: '800',
-    color: '#FFFFFF',
+    color: '#F9FAFB',
   },
   content: {
     flex: 1,
@@ -98,16 +98,20 @@ const styles = StyleSheet.create({
   cartItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#1A1F36',
+    backgroundColor: 'rgba(31, 41, 55, 0.6)',
     padding: 16,
-    borderRadius: 16,
+    borderRadius: 20,
     marginBottom: 20,
+    borderWidth: 1,
+    borderColor: 'rgba(75, 85, 99, 0.3)',
   },
   itemIcon: {
     width: 60,
     height: 60,
     borderRadius: 12,
-    backgroundColor: '#0A0E27',
+    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+    borderWidth: 1,
+    borderColor: 'rgba(16, 185, 129, 0.2)',
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 16,
@@ -118,23 +122,25 @@ const styles = StyleSheet.create({
   itemName: {
     fontSize: 18,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#F9FAFB',
     marginBottom: 4,
   },
   restaurantName: {
     fontSize: 14,
-    color: '#4A5568',
+    color: '#6B7280',
   },
   itemPrice: {
     fontSize: 20,
     fontWeight: '800',
-    color: '#00D9A5',
+    color: '#10B981',
   },
   summaryCard: {
-    backgroundColor: '#1A1F36',
+    backgroundColor: 'rgba(31, 41, 55, 0.6)',
     padding: 20,
-    borderRadius: 16,
+    borderRadius: 20,
     marginBottom: 20,
+    borderWidth: 1,
+    borderColor: 'rgba(75, 85, 99, 0.3)',
   },
   summaryRow: {
     flexDirection: 'row',
@@ -143,27 +149,27 @@ const styles = StyleSheet.create({
   },
   summaryLabel: {
     fontSize: 16,
-    color: '#4A5568',
+    color: '#6B7280',
   },
   summaryValue: {
     fontSize: 16,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#F9FAFB',
   },
   divider: {
     height: 1,
-    backgroundColor: '#2D3748',
+    backgroundColor: 'rgba(75, 85, 99, 0.3)',
     marginVertical: 12,
   },
   totalLabel: {
     fontSize: 18,
     fontWeight: '800',
-    color: '#FFFFFF',
+    color: '#F9FAFB',
   },
   totalValue: {
     fontSize: 20,
     fontWeight: '800',
-    color: '#00D9A5',
+    color: '#10B981',
   },
   emptyCart: {
     alignItems: 'center',
@@ -173,7 +179,9 @@ const styles = StyleSheet.create({
     width: 120,
     height: 120,
     borderRadius: 60,
-    backgroundColor: '#1A1F36',
+    backgroundColor: 'rgba(31, 41, 55, 0.6)',
+    borderWidth: 1,
+    borderColor: 'rgba(75, 85, 99, 0.3)',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 24,
@@ -181,35 +189,40 @@ const styles = StyleSheet.create({
   emptyText: {
     fontSize: 24,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#F9FAFB',
     marginBottom: 8,
   },
   emptySubtext: {
     fontSize: 16,
-    color: '#4A5568',
+    color: '#6B7280',
     textAlign: 'center',
   },
   footer: {
     paddingHorizontal: 20,
-    paddingBottom: 100,
+    paddingBottom: 120,
     paddingTop: 20,
   },
   checkoutButton: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#00D9A5',
+    backgroundColor: '#10B981',
     padding: 20,
-    borderRadius: 16,
+    borderRadius: 20,
+    shadowColor: '#10B981',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.3,
+    shadowRadius: 12,
+    elevation: 8,
   },
   checkoutText: {
     fontSize: 18,
     fontWeight: '800',
-    color: '#0A0E27',
+    color: '#111827',
   },
   checkoutPrice: {
     fontSize: 18,
     fontWeight: '800',
-    color: '#0A0E27',
+    color: '#111827',
   },
 });
